@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" ng-app ="myapp"
+<html lang="en" ng-app="myapp">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>lebanon planner trip</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
-<body ng-controller ="mainCtrl">
-	
+
+
+<body ng-controller="mainCrtl">
+    <my-nav></my-nav>
+    <ng-view></ng-view>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+    <script src="./app.js"></script>
+    <script src="./direct.js"></script>
+    <script src="../server.js"></script>
+    <script src="./components/home/home.js"></script>
+    <script src="./components/lebanon/balbak/balbak.js"></script>
+    <script src="./components/lebanon/beirut/beirut.js"></script>
+    <script src="./components/lebanon/byblos/byblos.js"></script>
+    <script src="./components/lebanon/saida/saida.js"></script>
+    <script src="./components/lebanon/tripoli/tripoli.js"></script>
+    <script src="./components/lebanon/tyre/tyre.js"></script>
+    <script src="./components/auth/auth.js"></script>
+    
+
+    
+
+
 </body>
+
 </html>
