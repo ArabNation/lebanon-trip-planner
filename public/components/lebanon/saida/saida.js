@@ -1,41 +1,22 @@
-var app = angular.module("myapp.saida", ["ngRout", "myapp"]);
-app.config(function ($routProvider) {
-    $routProvider.when("/saida", {
-        templateUrl: "./saida.html",
-        controller: "saidaController"
+var app = angular.module("app.saida", ["ngRoute", "myapp"]);
+app.config(function ($routeProvider) {
+    $routeProvider.when("/saida", {
+        templateUrl: "./components/lebanon/saida/saida.html",
+        controller: "saidaCtrl"
     })
 })
-app.controller("saidaController", function ($scope, lebanonService) {
+app.controller("saidaCtrl", function ($scope, lebanonService) {
     //get data
     $scope.getData = function () {
         lebanonService.get().then(function (response) {
-            $scope.data = response.data
+            $scope.data = response.data.filter(function (item) {
+                return item.city === "saida"
+            })
             console.log(response.data)
         }, function (error) {
-            alert("Error" + ":" + error.status)
+            alert("error" + ":" + error.status)
         })
-    }
-    //post to data
-    $scope.submait = function () {
-        var add = {
 
-        }
-    }
-    //delete from data
-    $scope.remove = function (id) {
-        lebanonService.delete(id).then(function (response) {
-            $scope.getData()
-        }, function (error) {
-            alert("Error" + error.status)
-        })
-    }
-    //update data
-    $scope.save = function (id, data) {
-        lebanonService.put(id, data).then(function (response) {
-            $scope.getData()
-        }, function (error) {
-            alert("Error" + error.status)
-        })
     }
 
 })

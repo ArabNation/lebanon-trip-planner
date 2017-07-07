@@ -1,4 +1,4 @@
-var app = angular.module("myapp.Auth");
+var app = angular.module("app.Auth");
 
 app.controller("LogoutController", ["UserService", function (UserService) {
     UserService.logout();

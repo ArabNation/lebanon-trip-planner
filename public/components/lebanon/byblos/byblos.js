@@ -1,41 +1,21 @@
-var app = angular.module("myapp.byblos", ["ngRout", "myapp"]);
-app.config(function ($routProvider) {
-    $routProvider.when("/byblos", {
-        templateUrl: "./byblos.html",
-        controller: "byblosController"
+var app = angular.module("app.byblos", ["ngRoute", "myapp"]);
+app.config(function ($routeProvider) {
+    $routeProvider.when("/byblos", {
+        templateUrl: "./components/lebanon/byblos/byblos.html",
+        controller: "byblosCtrl"
     })
 })
-app.controller("byblosController", function ($scope, lebanonService) {
+app.controller("byblosCtrl", function ($scope, lebanonService) {
     //get data
     $scope.getData = function () {
         lebanonService.get().then(function (response) {
-            $scope.data = response.data
+            $scope.data = response.data.filter(function (item) {
+                return item.city === "byblos"
+            })
             console.log(response.data)
         }, function (error) {
-            alert("Error" + ":" + error.status)
+            alert("error" + ":" + error.status)
         })
-    }
-    //post to data
-    $scope.submait = function () {
-        var add = {
 
-        }
     }
-    //delete from data
-    $scope.remove = function (id) {
-        lebanonService.delete(id).then(function (response) {
-            $scope.getData()
-        }, function (error) {
-            alert("Error" + error.status)
-        })
-    }
-    //update data
-    $scope.save = function (id, data) {
-        lebanonService.put(id, data).then(function (response) {
-            $scope.getData()
-        }, function (error) {
-            alert("Error" + error.status)
-        })
-    }
-
 })

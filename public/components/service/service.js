@@ -1,5 +1,5 @@
-angular.module("myapp").service("LebanonService", function ($http) {
-    var url = "http://localhost:8080/lebanon/"
+angular.module("myapp").service("lebanonService", function ($http) {
+    var url = "http://localhost:6969/api/lebanon/"
     this.get = function () {
         return $http.get(url)
     }

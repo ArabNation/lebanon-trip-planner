@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+
+    <link rel="stylesheet" href="./components/css/style.css">
+    <link rel="stylesheet" href="./components/css/navbar.css">
+    <link rel="stylesheet" href="./components/css/home.css">
 </head>
 
 
 <body ng-controller="mainCrtl">
     <my-nav></my-nav>
     <ng-view></ng-view>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
     <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
     <script src="./app.js"></script>
-    <script src="./direct.js"></script>
-    <script src="../server.js"></script>
+    <script src="components/service/service.js"></script>
+    <script src="./components/navbar/direct.js"></script>
+    <script src="./components/navbar/navbarcrtl.js"></script>
     <script src="./components/home/home.js"></script>
     <script src="./components/lebanon/balbak/balbak.js"></script>
     <script src="./components/lebanon/beirut/beirut.js"></script>
@@ -27,9 +34,9 @@
     <script src="./components/lebanon/tripoli/tripoli.js"></script>
     <script src="./components/lebanon/tyre/tyre.js"></script>
     <script src="./components/auth/auth.js"></script>
-    
-
-    
+    <script src="./components/auth/login/login.js"></script>
+    <script src="./components/auth/signup/signup.js"></script>
+    <script src="./components/auth/logout/logout.js"></script>
 
 
 </body>

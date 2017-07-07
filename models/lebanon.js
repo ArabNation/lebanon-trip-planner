@@ -1,13 +1,21 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var lebanonSchema = new Schema({
-    title: {
+    name: {
         type: String,
         required: true
     },
-    completed: {
-        type: Boolean,
-        default: false
+    location: {
+        type: String,
+        required: true
+    },
+    img: {
+        type: String,
+        required: true
+    },
+    desc: {
+        type: String,
+        required: true
     },
     user: {
         type: Schema.Types.ObjectId,

@@ -1,41 +1,21 @@
-var app = angular.module("myapp.beirut", ["ngRout", "myapp"]);
-app.config(function ($routProvider) {
-    $routProvider.when("/beirut", {
-        templateUrl: "./beirut.html",
-        controller: "beirutController"
+var app = angular.module("app.beirut", ["ngRoute", "myapp"]);
+app.config(function ($routeProvider) {
+    $routeProvider.when("/beirut", {
+        templateUrl: "./components/lebanon/beirut/beirut.html",
+        controller: "beirutCtrl"
     })
 })
-app.controller("beirutController", function ($scope, lebanonService) {
+app.controller("beirutCtrl", function ($scope, lebanonService) {
     //get data
     $scope.getData = function () {
         lebanonService.get().then(function (response) {
-            $scope.data = response.data
+            $scope.data = response.data.filter(function (item) {
+                return item.city === "beirut"
+            })
             console.log(response.data)
         }, function (error) {
-            alert("Error" + ":" + error.status)
+            alert("error" + ":" + error.status)
         })
-    }
-    //post to data
-    $scope.submait = function () {
-        var add = {
 
-        }
     }
-    //delete from data
-    $scope.remove = function (id) {
-        lebanonService.delete(id).then(function (response) {
-            $scope.getData()
-        }, function (error) {
-            alert("Error" + error.status)
-        })
-    }
-    //update data
-    $scope.save = function (id, data) {
-        lebanonService.put(id, data).then(function (response) {
-            $scope.getData()
-        }, function (error) {
-            alert("Error" + error.status)
-        })
-    }
-
 })
