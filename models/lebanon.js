@@ -23,9 +23,12 @@ var lebanonSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        ref: "user",
-        required: true
+        ref: "user"
+    },
+	comments: {
+        type: []
     }
+	
 });
 var Lebanon = mongoose.model("Lebanon", lebanonSchema);
 module.exports = Lebanon;

@@ -18,6 +18,17 @@ app.controller("balbakCtrl", function ($scope, lebanonService) {
         })
 
     };
+    $scope.like = {};
+    $scope.like.votes = 0;
+    $scope.doVote = function () {
+        if ($scope.like.userVotes == 1) {
+            delete $scope.like.userVotes;
+            $scope.like.votes--;
+        } else {
+            $scope.like.userVotes = 1;
+            $scope.like.votes++;
+        }
+    };
     var myIndex = 0;
     carousel();
 

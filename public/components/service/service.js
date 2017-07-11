@@ -4,6 +4,7 @@ angular.module("myapp").service("lebanonService", function ($http) {
         return $http.get(url)
     }
     this.post = function (add) {
+		console.log(add)
         return $http.post(url, add)
     }
     this.delete = function (id) {

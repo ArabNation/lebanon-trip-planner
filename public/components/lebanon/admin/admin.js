@@ -27,6 +27,7 @@ app.controller("adminCtrl", function ($scope, lebanonService) {
             img: $scope.img,
             desc: $scope.desc
         }
+		console.log(add)
         lebanonService.post(add).then(function (response) {
             $scope.getData()
         }, function (error) {
