@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!--post new location-->
+            <h1>post new location</h1>
+            <select ng-model="city">
+                <option value="balbak">Baalbak</option>
+                <option value="beirut">Beirut</option>
+                <option value="tripoli">Tripoli</option>
+                <option value="byblos">Byblos</option>
+                <option value="tyre">Tyre</option>
+                <option value="saida">Saida</option>
+            </select>
+            <input ng-model="name" placeholder="name">
+            <input ng-model="location" placeholder="location">
+            <input ng-model="img" placeholder="img">
+            <input ng-model="desc" placeholder="Desc">
+            <button ng-click="submit()">submit</button>
+        </div>
+    </div>
+</div>
+<div class="container" ng-init="getData()">
+    <div class="row">
+        <div ng-repeat="item in data">
+            <div class="col-md-6">
+                <div ng-show="edit">
+                    <img class="imgAdmin" ng-src={{item.img}}>
+                    <p>{{item.name}}</p>
+                    <p>{{item.location}}</p>
+                    <p>{{item.desc}}</p>
+                    <button class="btn" ng-click=" remove(item._id) ">Delete</button>
+                    <button class="btn" ng-click="edit=!edit">Edit</button>
+                </div>
+                <div ng-hide="edit">
+                    <div class="col-md-6">
+                        <input class="inputEdit" type="text" placeholder="name" ng-model="item.name">
+                        <input class="inputEdit" type="text" placeholder="location" ng-model="item.location">
+                        <input class="inputEdit" type="text" placeholder="img" ng-model="item.img">
+                        <input class="inputEdit" type="text" placeholder="desc" ng-model="item.desc">
+                        <button ng-click="save(item._id,item);edit=!edit">save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

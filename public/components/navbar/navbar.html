@@ -1,7 +1,6 @@
 <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            
             <!-- logo -->
             <a class="navbar-brand" href="#/home">
                 <img src="http://www.rainpackaging.com/Images/Webdev/webhosting.png" />
@@ -9,16 +8,16 @@
         </div>
         <div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav animated fadeIn text16">
-               
-                
-                <li><a href="#/"><span class="glyphicon glyphicon-th-large gly-spin"></span></a></li>
-                
+
+
+                <li><a href="#/contact"><span class="glyphicon glyphicon-th-large gly-spin"></span></a></li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-usd"></span> Reservations <span class="caret"></span></a>
                     <ul class="dropdown-menu animated flipInX" role="menu">
-                        <li><a href="#/home"><span class="glyphicon glyphicon-list-alt"></span>Reservation Hotel</a></li>
-                        <li><a href="#/home"><span class="glyphicon glyphicon-road"></span>Reservation Flight</a></li>
-                        <li><a href="#/home"><span class="glyphicon glyphicon-barcode"></span>Reservation Sea trip</a></li>
+                        <li><a href="https://www.booking.com/city/lb/beirut.en.html?aid=1135786;label=beirut-9oLdoQJMDfWmKcKdnAUDCAS101851013186:pl:ta:p1:p2:ac:ap1t1:neg:fi:tikwd-27075704509:lp9070351:li:dec:dm;ws=&gclid=Cj0KEQjwy4zLBRCOg6-4h6vs3cUBEiQAN-yzfgBfl18hprVXBY4NUXyoIu0u8YVCm5OKlLlLnmcpf5waAigz8P8HAQ" target="_blank"><span class="glyphicon glyphicon-list-alt"></span>Reservation Hotel</a></li>
+                        <li><a href="https://www.mea.com.lb/arabic/home" target="_blank"><span class="glyphicon glyphicon-road"></span>Reservation Flight</a></li>
+                        <li><a href="http://www.msccruises.com.lb/en-lb/Homepage.aspx" target="_blank"><span class="glyphicon glyphicon-barcode"></span>Reservation Sea trip</a></li>
                         <li class="divider"></li>
                         <li><a href="#">One more separated link</a></li>
                     </ul>
@@ -26,7 +25,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b> Login</b> <span class="caret"></span></a>
+                    <a href="#/home" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b> Login</b> <span class="caret"></span></a>
                     <ul id="login-dp" class="dropdown-menu">
                         <li>
                             <div class="row">
@@ -38,15 +37,15 @@
                                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                                         <div class="form-group">
                                             <label class="sr-only">login</label>
-                                            <input type="email" class="form-control"placeholder="Enter Username" ng-model="user.username">
+                                            <input type="email" class="form-control" placeholder="Enter Username" ng-model="user.username">
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" >password</label>
+                                            <label class="sr-only">password</label>
                                             <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
                                             <div class="help-block text-right"><a href="">I forgot my password ?</a></div>
                                         </div>
                                         <div class="form-group">
-                                            <button ng-click="newlogin()" class="btn btn-primary btn-block">Log In</button>
+                                            <button ng-click="newlogin()" class="btn btn-primary btn-block"><a href="#/login"><span class="glyphicon glyphicon-road"></span>Sign In</a> </button>
                                         </div>
                                         <div class="checkbox text-dark">
                                             <label>
@@ -76,20 +75,22 @@
         </div>
         <div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav animated fadeIn">
-                <li class="active"><a href="#">MRM | Tours</a></li>
-                <li><a href="#">Link</a></li>
+                <li class="active"><a href="#/home">Window | Lebanon</a></li>
+                <li><a href="#">Advertisement</a></li>
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"> Trips <span class="caret"></span></a>
                     <ul class="dropdown-menu animated flipInX" role="menu">
                         <li>
                             <a href="#/home"></a>
                         </li>
+                        <li ng-show=check()><a href="#/admin"> Admin</a></li>
                         <li><a href="#/balbak"> Baalbeck</a></li>
                         <li><a href="#/beirut"> Beirut</a></li>
                         <li><a href="#/byblos"> Byblos</a></li>
                         <li><a href="#/saida"> Saida</a></li>
                         <li><a href="#/tripoli"> Tripoli</a></li>
                         <li><a href="#/tyre"> Tyre</a></li>
+                        <li><a href="#">One more</a></li>
                     </ul>
                 </li>
             </ul>
@@ -135,3 +136,22 @@
         </div>
     </div>
 </nav>
+<!--
+<div class="container">
+    <div class="row">
+        <svg viewBox="0 0 1500 300">
+    <symbol id="s-text">
+		<text text-anchor="middle" x="50%" y="80%">Vistas Of Lebanon</text>
+	</symbol>
+
+	<g>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+	</g>
+</svg>
+    </div>
+</div>
+-->

@@ -6,6 +6,7 @@ app.config(function ($routeProvider) {
     })
 })
 app.controller("adminCtrl", function ($scope, lebanonService) {
+    $scope.edit = true;
     //get data
     $scope.getData = function () {
         lebanonService.get().then(function (response) {
@@ -20,7 +21,11 @@ app.controller("adminCtrl", function ($scope, lebanonService) {
     //post to data
     $scope.submit = function () {
         var add = {
-
+            city: $scope.city,
+            name: $scope.name,
+            location: $scope.location,
+            img: $scope.img,
+            desc: $scope.desc
         }
         lebanonService.post(add).then(function (response) {
             $scope.getData()
