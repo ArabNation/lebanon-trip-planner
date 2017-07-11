@@ -1,5 +1,5 @@
 <!--slider images-->
-<div class="w3-content w3-section" style="max-width:1200px">
+<div id="slideview" class="w3-content w3-section" style="max-width:1200px">
     <img class="mySlides w3-animate-right" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
     <img class="mySlides w3-animate-left" src="http://www.beirutreport.com/wp-content/uploads/2013/03/Rebuilt_orientalist_architecture.jpg" style="width:100%">
     <img class="mySlides w3-animate-right" src="http://countryandtownhouse.co.uk/wp-content/uploads/2014/03/Beirut-city-scape.jpg" style="width:100%">
@@ -9,73 +9,64 @@
 <div ng-init="getData()">
     <div class="container" ng-repeat="item in data">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6">
                 <img class="imgData" ng-src={{item.img}}>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2 class="location">{{item.location}}</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6">
                 <p class="desc">{{item.desc}}</p>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6 ">
+                <h2 class="location">{{item.location}}</h2>
+                <a ng-click="doVote()">
+                    <i class="glyphicon" ng-class="(like.userVotes==1) ? 'glyphicon-heart' : 'glyphicon-heart-empty'"></i>
+                    <span ng-model="like.votes">{{like.votes}}</span>
+                </a>
+            </div>
+        </div>
+
     </div>
+
 </div>
+<!--////catgories-->
+<div class="main-wrap">
+    <div class="sidebar">
+        <h1 class="lead">Lebanon Tours</h1>
+        <!--            ///map-->
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d3313.402617044091!2d35.508185732532546!3d33.853513390082796!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m3!3m2!1d33.8534688!2d35.5077351!4m0!5e0!3m2!1sen!2slb!4v1496693499587"></iframe>
 
-	<!--////catgories-->
-	<div class="main-wrap">
-		<div class="sidebar">
-			<h1 class="lead">Lebanon Tours</h1>
-			<!--            ///map-->
-			<div class="map-responsive">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d3313.402617044091!2d35.508185732532546!3d33.853513390082796!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m3!3m2!1d33.8534688!2d35.5077351!4m0!5e0!3m2!1sen!2slb!4v1496693499587"></iframe>
+        </div>
 
-			</div>
-
-			<aside class="sticky">
-				<h4>Travel Dates</h4>
-				<ul class="date">
-					<li><span>From</span></li>
-					<li> <label> <input type="date"> </label> </li>
-					<li><span>To</span></li>
-					<li> <label> <input type="date"> </label> </li>
-				</ul>
-				<h4>Categories</h4>
-				<ul>
-					<li><a href="#/beirut" class="new">Visit Beirut in seven days</a></li>
-					<li><a href="#/tripoli" class="new">Visit Tripoli in seven days</a></li>
-					<li><a href="#/balbak" class="new">Visit Balbeck in seven days</a></li>
-					<li><a href="#/byblos" class="new">Visit Byblos in seven days</a></li>
-					<li><a href="#/saida" class="new">Visit Sydon in seven days</a></li>
-					<li><a href="#/tyre" class="new">Visit Tyre in seven days</a></li>
-				</ul>
-				<div>
-					<div class="inner">
-						<div>Get the Inside Scoop</div>
-						<div class="bd">
-							<form>
-								<div> <input type="text" placeholder="Enter email address"> </div><br>
-								<div> <button><span><a href="#/signup">Sign Up</a></span></button> </div>
-							</form>
-						</div>
-					</div> <b class="bottom"><b class="bl"></b><b class="br"></b></b>
-				</div>
-			</aside>
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-<!--script for slider images-->
-
+        <aside class="sticky">
+            <h4>Travel Dates</h4>
+            <ul class="date">
+                <li><span>From</span></li>
+                <li> <label> <input type="date"> </label> </li>
+                <li><span>To</span></li>
+                <li> <label> <input type="date"> </label> </li>
+            </ul>
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="#/beirut" class="new">Visit Beirut in seven days</a></li>
+                <li><a href="#/tripoli" class="new">Visit Tripoli in seven days</a></li>
+                <li><a href="#/balbak" class="new">Visit Balbeck in seven days</a></li>
+                <li><a href="#/byblos" class="new">Visit Byblos in seven days</a></li>
+                <li><a href="#/saida" class="new">Visit Sydon in seven days</a></li>
+                <li><a href="#/tyre" class="new">Visit Tyre in seven days</a></li>
+            </ul>
+            <div>
+                <div class="inner">
+                    <div>Get the Inside Scoop</div>
+                    <div class="bd">
+                        <form>
+                            <div> <input type="text" placeholder="Enter email address"> </div><br>
+                            <div> <button><span><a href="#/signup">Sign Up</a></span></button> </div>
+                        </form>
+                    </div>
+                </div> <b class="bottom"><b class="bl"></b><b class="br"></b></b>
+            </div>
+        </aside>
+    </div>

@@ -38,6 +38,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+#slideview {
+    margin-left: 370px;
+}
 
 h1 {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
