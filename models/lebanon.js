@@ -1,6 +1,10 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var lebanonSchema = new Schema({
+    city: {
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: true

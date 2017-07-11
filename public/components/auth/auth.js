@@ -14,15 +14,18 @@ app.config(["$routeProvider", function ($routeProvider) {
             template: ""
         })
 }])
-app.service("UserService", ["$http", "$location", "LebanonService", function ($http, $location, LebanonService) {
+app.service("UserService", ["$http", "$location", "LebanonService", "AdminService", function ($http, $location, LebanonService, AdminService) {
     this.signup = function (user) {
         return $http.post("/auth/signup", user)
     };
 
     this.login = function (user) {
+        console.log(user)
         return $http.post("/auth/login", user).then(function (response) {
             console.log(response.data.user)
             LebanonService.setToken(response.data.token);
+            console.log(response.data.user.admin)
+            AdminService.setToken(response.data.user.admin)
             return response;
         });
     };
@@ -46,6 +49,17 @@ app.service('LebanonService', [function () {
     };
 }]);
 
+app.service('AdminService', [function () {
+    this.setToken = function (token) {
+        localStorage["admin"] = token;
+    };
+    this.getToken = function () {
+        return localStorage["admin"]
+    };
+    this.removeToken = function () {
+        localStorage.removeItem("admin")
+    };
+}]);
 app.service('AuthInterceptor', ["$q", "$location", "LebanonService", function ($q, $location, LebanonService) {
     this.request = function (config) {
         var token = LebanonService.getToken();

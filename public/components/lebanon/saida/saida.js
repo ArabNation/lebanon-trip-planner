@@ -5,6 +5,7 @@ app.config(function ($routeProvider) {
         controller: "saidaCtrl"
     })
 })
+
 app.controller("saidaCtrl", function ($scope, lebanonService) {
     //get data
     $scope.getData = function () {

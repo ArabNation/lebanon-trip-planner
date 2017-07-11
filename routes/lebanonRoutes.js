@@ -1,16 +1,18 @@
 var express = require("express");
 var lebanonRouter = express.Router();
 var Lebanon = require("../models/lebanon");
+var admin = require("../privilege/admin.js");
+
 
 lebanonRouter.route("/")
     .get(function (req, res) {
-        Lebanon.find({
-            user: req.user._id
-        }, function (err, lebanons) {
+        Lebanon.find(function (err, lebanons) {
             if (err) return res.status(500).send(err);
             return res.send(lebanons);
         })
-    })
+    });
+lebanonRouter.use(admin)
+lebanonRouter.route("/")
     .post(function (req, res) {
         var lebanon = new Lebanon(req.body);
         lebanon.user = req.user;
@@ -22,8 +24,7 @@ lebanonRouter.route("/")
 lebanonRouter.route("/:lebanonId")
     .get(function (req, res) {
         Lebanon.findById({
-            _id: req.params.lebanonId,
-            user: req.user._id
+            _id: req.params.lebanonId
         }, function (err, lebanon) {
             if (err) return res.status(500).send(err);
             if (!lebanon) return res.status(404).send("no item found");
@@ -32,8 +33,7 @@ lebanonRouter.route("/:lebanonId")
     })
     .put(function (req, res) {
         Lebanon.findOnAndUpdate({
-            _id: req.params.lebanonId,
-            user: req.user._id
+            _id: req.params.lebanonId
         }, {
             new: true
         }, function (err, lebanon) {
@@ -43,8 +43,7 @@ lebanonRouter.route("/:lebanonId")
     })
     .delete(function (req, res) {
         Lebanon.findOneAndRemove({
-            _id: req.params.lebanonId,
-            user: req.user._id
+            _id: req.params.lebanonId
         }, function (err, lebanon) {
             if (err) return res.status(500).send(err);
             return res.send(lebanon)

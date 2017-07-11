@@ -8,35 +8,129 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
-
     <link rel="stylesheet" href="./components/css/style.css">
     <link rel="stylesheet" href="./components/css/navbar.css">
     <link rel="stylesheet" href="./components/css/home.css">
+    <link rel="stylesheet" href="./components/css/footer.css">
+    <link rel="stylesheet" href="./components/css/contact.css">
 </head>
 
 
 <body ng-controller="mainCrtl">
-    <my-nav></my-nav>
-    <ng-view></ng-view>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-    <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
-    <script src="./app.js"></script>
-    <script src="components/service/service.js"></script>
-    <script src="./components/navbar/direct.js"></script>
-    <script src="./components/navbar/navbarcrtl.js"></script>
-    <script src="./components/home/home.js"></script>
-    <script src="./components/lebanon/balbak/balbak.js"></script>
-    <script src="./components/lebanon/beirut/beirut.js"></script>
-    <script src="./components/lebanon/byblos/byblos.js"></script>
-    <script src="./components/lebanon/saida/saida.js"></script>
-    <script src="./components/lebanon/tripoli/tripoli.js"></script>
-    <script src="./components/lebanon/tyre/tyre.js"></script>
-    <script src="./components/auth/auth.js"></script>
-    <script src="./components/auth/login/login.js"></script>
-    <script src="./components/auth/signup/signup.js"></script>
-    <script src="./components/auth/logout/logout.js"></script>
+    <my-nav></my-nav>
+    <div id="particles-js"></div>
+
+            <div class="col-xs-7 col-xs-offset-3">
+                <h1 class="elegantshd">Vistas Of Lebanon</h1>
+            </div>
+            <ng-view></ng-view>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="container">
+                                <div class="col-lg-3">
+                                    <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                        <p style="text-align:center; margin-top:20px;">
+                                            <img src="http://janoubia.com/wp-content/uploads/2014/06/lebanon.jpg" class="img-responsive" alt="">
+                                        </p>
+                                        <div class="caption">
+                                            <div class="blur"></div>
+                                            <div class="caption-text">
+                                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">THIS IS MY Trip</h3>
+                                                <p>Villages in Lebanon (The Seven Villages: Origins and Implications)</p>
+                                                <a class=" btn btn-default" href="https://now.mmedia.me/Library/Files/EnglishDocumentation/Other%20Documents/The_Seven_Villages-paper-final2.pdf" target="_blank"><span class="glyphicon glyphicon-plus"> INFO</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+                                        <p style="text-align:center; margin-top:20px;">
+                                            <img src="http://almustaqbal.com/issues/images/5000to5999/5598/c7n2.gif" class="img-responsive" alt="">
+                                        </p>
+                                        <div class="caption">
+                                            <div class="blur"></div>
+                                            <div class="caption-text">
+                                                <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">THIS IS MY Trip</h3>
+                                                <p>Cedars is reached either through the Bekaa or from the coast
+
+                                                </p>
+                                                <a class=" btn btn-default" href="https://en.wikipedia.org/wiki/Cedrus_libani" target="_blank"><span class="glyphicon glyphicon-plus"> INFO</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <h3>Wikipedia List:</h3>
+                                    <ul>
+                                        <li><a href="https://en.wikipedia.org/wiki/Beirut" target="_blank"><i class="fa fa-book"></i> Beirut</a></li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Tripoli,_Lebanon" target="_blank"><i class="fa fa-book"></i> Tripoli</a></li>
+                                        <li><a href="http://www.middleeast.com/baalbeck.htm" target="_blank"><i class="fa fa-book"></i> Balbeck</a></li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Byblos" target="_blank"><i class="fa fa-book"></i> Byblos</a></li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Sidon" target="_blank"><i class="fa fa-book"></i> Sydon</a></li>
+                                        <li><a href="https://en.wikipedia.org/wiki/Tyre,_Lebanon" target="_blank"><i class="fa fa-book"></i> Tyre</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6">
+                                    <h3>Contact:</h3>
+                                    <p>Have a question or feedback? Contact me!</p>
+                                    <p><a href="#/contact" title="Contact me!"><i class="fa fa-envelope"></i> Contact</a></p>
+                                    <h3>Follow:</h3>
+                                    <a href="https://twitter.com/viatortravel" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x"></i>
+</span>
+Twitter</a>
+                                    <a href="https://www.facebook.com/VistasLabanon" target="_blank" title="Facebook"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-facebook fa-stack-1x"></i>
+</span>
+Facebook</a>
+                                    <!--
+                       <a href="https://www.linkedin.com/viatortravel" target="_blank" title="Linkedin"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-linkedin fa-stack-1x"></i>
+</span>
+Linkedin</a>
+-->
+                                </div>
+                                <br/>
+                                <div id="fb-root"></div>
+
+                                <br/>
+
+                                <hr>
+                                <p>Copyright © Your Website | <a href="">Privacy Policy</a> | <a href="">Terms of Lebanon</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+            <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+            <script src="./app.js"></script>
+            <script src="components/service/service.js"></script>
+            <script src="./components/navbar/direct.js"></script>
+            <script src="./components/navbar/navbarctrl.js"></script>
+            <script src="./components/home/home.js"></script>
+            <script src="./components/lebanon/balbak/balbak.js"></script>
+            <script src="./components/lebanon/beirut/beirut.js"></script>
+            <script src="./components/lebanon/byblos/byblos.js"></script>
+            <script src="./components/lebanon/saida/saida.js"></script>
+            <script src="./components/lebanon/tripoli/tripoli.js"></script>
+            <script src="./components/lebanon/tyre/tyre.js"></script>
+            <script src="./components/lebanon/admin/admin.js"></script>
+            <script src="./components/auth/auth.js"></script>
+            <script src="./components/auth/login/login.js"></script>
+            <script src="./components/auth/signup/signup.js"></script>
+            <script src="./components/auth/logout/logout.js"></script>
+            <script src="./components/contact/contact.js"></script>
 
 
 </body>
