@@ -1,35 +1,58 @@
 <!--slider images-->
 <div class="w3-content w3-section" style="max-width:960px">
-    <img class="mySlides w3-animate-right" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
-    <img class="mySlides w3-animate-left" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
-    <img class="mySlides w3-animate-right" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
-    <img class="mySlides w3-animate-left" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
+	<img class="mySlides w3-animate-right" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
+	<img class="mySlides w3-animate-left" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
+	<img class="mySlides w3-animate-right" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
+	<img class="mySlides w3-animate-left" src="https://www.batuta.com/media/3435539/%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA.jpg" style="width:100%">
 </div>
 <!--get data items-->
 <div ng-init="getData()">
-    <div class="container" ng-repeat="item in data">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <img class="imgData" ng-src={{item.img}}>
-            </div>
-        </div>
+	<div class="container" ng-repeat="item in data">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<img class="imgData" ng-src={{item.img}}>
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2 class="location">{{item.location}}</h2>
-            </div>
-        </div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h2 class="location">{{item.location}}</h2>
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <p class="desc">{{item.desc}}</p>
-            </div>
-        </div>
-    </div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<p class="desc">{{item.desc}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div ng-repeat="comment in item.comments">
+					<p>{{comment.name}} : {{comment.message}}</p>
+				</div>
+			</div>
+		</div>
+		<section id="contact" class="content-section text-center" ng-hide="mycomment">
+			<div class="contact-section">
+				<div class="container">
+					<h2>Your Comments</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<form>
+								<div class="form-group ">
+									<label>Your Message</label>
+									<textarea class="form-control" placeholder="Your Comments" ng-model="mohmmed"></textarea>
+								</div>
+								<button type="submit" class="btn btn-success" ng-click="save(item._id,item, mohmmed)">Send Comments</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </div>
-
-
-
+<!--///comments-->
 
 
 
@@ -38,22 +61,22 @@
 
 <!--script for slider images-->
 <script>
-    var myIndex = 0;
-    carousel();
+	var myIndex = 0;
+	carousel();
 
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i <
-            x.length; i++) {
-            x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) {
-            myIndex = 1
-        }
-        x[myIndex - 1].style.display = "block";
-        setTimeout(carousel, 2500);
-    }
+	function carousel() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i <
+			x.length; i++) {
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if (myIndex > x.length) {
+			myIndex = 1
+		}
+		x[myIndex - 1].style.display = "block";
+		setTimeout(carousel, 2500);
+	}
 
 </script>
